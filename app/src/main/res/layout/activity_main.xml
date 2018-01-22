@@ -12,52 +12,103 @@
     tools:context="com.londonappbrewery.bitcointicker.MainActivity">
 
     <TextView
+        android:id="@+id/priceLabel3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/label_default_text"
-        android:id="@+id/priceLabel"
-        android:textSize="45sp"
-        android:textStyle="bold"
+        android:layout_alignBottom="@+id/bitcoinPriceLabel"
+        android:layout_alignEnd="@+id/priceLabel4"
+        android:layout_alignRight="@+id/priceLabel4"
+        android:text="@string/bitcoin_label"
+        android:textAlignment="textEnd"
         android:textColor="@color/fontColour"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/priceLabel4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ethereumPriceLabel"
+        android:layout_alignBottom="@+id/ethereumPriceLabel"
+        android:layout_alignLeft="@+id/linearLayout"
+        android:layout_alignStart="@+id/linearLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/ethereum_label"
+        android:textAlignment="textEnd"
+        android:textColor="@color/fontColour"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/ethereumPriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bitcoinPriceLabel"
+        android:layout_alignLeft="@+id/bitcoinPriceLabel"
+        android:layout_alignStart="@+id/bitcoinPriceLabel"
+        android:layout_marginBottom="23dp"
+        android:text="@string/ethereum_default_text"
+        android:textAlignment="textEnd"
+        android:textColor="@color/fontColour"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/bitcoinPriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_alignRight="@+id/linearLayout"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:text="@string/bitcoin_default_text"
+        android:textAlignment="textEnd"
+        android:textColor="@color/fontColour"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <ImageView
+        android:id="@+id/logoImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/logoImage"
+        android:layout_above="@+id/bitcoinPriceLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="135dp"
         android:contentDescription="@string/imageview_desc"
-        android:src="@drawable/bitcoin_image"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:src="@drawable/bitcoin_image" />
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/priceLabel"
-        android:gravity="center_vertical|center_horizontal">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/bitcoinPriceLabel"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/base"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:id="@+id/textView"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:text="@string/base"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <Spinner
+            android:id="@+id/currency_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/currency_spinner"
-            android:gravity="center_horizontal"
-            android:spinnerMode="dropdown"
             android:dropDownSelector="@color/fontColour"
-            />
+            android:gravity="center_horizontal"
+            android:spinnerMode="dropdown" />
 
 
     </LinearLayout>
